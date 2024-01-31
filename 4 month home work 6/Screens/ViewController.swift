@@ -62,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDataSource  {
         super.viewDidLoad()
         setupUI()
         ImageData()
-        
+        bottomOfScreen()
         let rightBarItem = UIBarButtonItem(customView: myUpperBT)
         self.navigationItem.rightBarButtonItem = rightBarItem
     }
@@ -73,9 +73,10 @@ class ViewController: UIViewController, UICollectionViewDataSource  {
     }
     
     private func upperPartScreen() {
+        
         view.addSubview(myBackimage)
         NSLayoutConstraint.activate([
-            myBackimage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -30),
+            myBackimage.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
             myBackimage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             myBackimage.heightAnchor.constraint(equalToConstant: 20),
             myBackimage.widthAnchor.constraint(equalToConstant: 20)
@@ -83,18 +84,28 @@ class ViewController: UIViewController, UICollectionViewDataSource  {
         
         view.addSubview(myUpperText)
         NSLayoutConstraint.activate([
-            myUpperText.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -30),
+            myUpperText.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
             myUpperText.leadingAnchor.constraint(equalTo: myBackimage.leadingAnchor, constant: 40)
         ])
         
         view.addSubview(mySearchImg)
         NSLayoutConstraint.activate([
-            mySearchImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -30),
+            mySearchImg.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
             mySearchImg.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             mySearchImg.heightAnchor.constraint(equalToConstant: 20),
             mySearchImg.widthAnchor.constraint(equalToConstant: 20)
         ])
         
+        view.addSubview(myUpperBT)
+        NSLayoutConstraint.activate([
+            myUpperBT.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
+            myUpperBT.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            myUpperBT.heightAnchor.constraint(equalToConstant: 20),
+            myUpperBT.widthAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func bottomOfScreen() {
         view.addSubview(myCollectionView)
         NSLayoutConstraint.activate([
             myCollectionView.topAnchor.constraint(equalTo: myUpperText.topAnchor, constant: 40),
@@ -103,7 +114,6 @@ class ViewController: UIViewController, UICollectionViewDataSource  {
             myCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         myCollectionView.dataSource = self
-        
     }
     
     private func ImageData() {
@@ -117,7 +127,7 @@ class ViewController: UIViewController, UICollectionViewDataSource  {
             Image(image: "sushi"),
             Image(image: "rice"),
             Image(image: "seafood"),
-            Image(image: "coctale"),
+            Image(image: "decerte"),
             Image(image: "saurma"),
             Image(image: "soup"),
             Image(image: "shashlik"),

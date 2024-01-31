@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "volga.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

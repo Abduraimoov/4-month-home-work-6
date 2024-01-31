@@ -14,7 +14,6 @@ extension UIImageView {
     }
 }
 
-
 class CustomCollectionViewCell: UICollectionViewCell {
     
     let ImageView: UIImageView = {
@@ -23,8 +22,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         
