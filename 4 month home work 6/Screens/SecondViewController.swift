@@ -29,11 +29,11 @@ class SecondViewController: UIViewController, UICollectionViewDataSource {
     
     private let myCollectionView2: UICollectionView = {
         let cln = UICollectionViewFlowLayout()
-        cln.itemSize = CGSize(width: 340, height: 150)
+        cln.itemSize = CGSize(width: 375, height: 150)
         cln.minimumLineSpacing = 10
         cln.minimumInteritemSpacing = 10
         cln.scrollDirection = .horizontal
-        cln.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 0, right: 0)
+        cln.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 0, right: 10)
         
         let sls = UICollectionView(frame: .zero, collectionViewLayout: cln)
         sls.translatesAutoresizingMaskIntoConstraints = false
@@ -109,8 +109,8 @@ class SecondViewController: UIViewController, UICollectionViewDataSource {
         view.addSubview(myCollectionView2)
         NSLayoutConstraint.activate([
             myCollectionView2.topAnchor.constraint(equalTo: myUpperText.bottomAnchor, constant: 30),
-            myCollectionView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            myCollectionView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            myCollectionView2.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            myCollectionView2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -0),
             myCollectionView2.heightAnchor.constraint(equalToConstant: 160)
         ])
         myCollectionView2.dataSource = self
